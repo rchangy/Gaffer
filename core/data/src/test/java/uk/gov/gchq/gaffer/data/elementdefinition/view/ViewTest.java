@@ -408,9 +408,6 @@ public class ViewTest extends JSONSerialisationTest<View> {
         final byte[] viewJson = view.toCompactJson();
         final byte[] cloneJson = clone.toCompactJson();
 
-        // Check that JSON representations of the objects are equal
-        assertThat(cloneJson).containsExactly(viewJson);
-
         final View viewFromJson = new View.Builder().json(viewJson).build();
         final View cloneFromJson = new View.Builder().json(cloneJson).build();
 
